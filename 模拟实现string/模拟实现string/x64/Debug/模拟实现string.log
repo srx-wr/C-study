@@ -1,0 +1,3 @@
+﻿  test.cpp
+F:\GIthub\subentry\模拟实现string\模拟实现string\string.h(239,1): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  模拟实现string.vcxproj -> F:\GIthub\subentry\模拟实现string\x64\Debug\模拟实现string.exe

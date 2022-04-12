@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f5965f37-556a-4170-adcd-4daf78e24117": {
+      "ProjectGuid": "f5965f37-556a-4170-adcd-4daf78e24117",
+      "DisplayName": "模拟实现string",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
