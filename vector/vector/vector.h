@@ -47,15 +47,35 @@ namespace wr
 		}
 		
 
-		// 扩容不初始化
+		// 扩容不初始化  +  有bug版本，
+		//void reserve(size_t n)
+		////{
+		////	if (n > capacity())
+		////	{
+		////		size_t sz = size();  // 记录数据的数量
+		////		T* tmp = new T[n];
+		////		memcpy(tmp, _start, sizeof(T) * sz);
+		////		delete[] _start;
+		////		_start = tmp;
+		////		_finish = _start + sz;
+		////		_endofstorage = _start + n;
+		////	}
+		////}
+		//修复bug版本
 		void reserve(size_t n)
 		{
 			if (n > capacity())
 			{
 				size_t sz = size();  // 记录数据的数量
 				T* tmp = new T[n];
-				memcpy(tmp, _start, sizeof(T) * sz);
-				delete[] _start;
+				if (_start)
+				{
+					for (size_t i = 0; i < sz; i++)
+					{
+						tmp[i] = _start[i];
+					}
+					delete[] _start;
+				}
 				_start = tmp;
 				_finish = _start + sz;
 				_endofstorage = _start + n;
